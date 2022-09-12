@@ -1,0 +1,24 @@
+  .menuLogin {
+    background-color: #ffb51c;
+    width: 30%;
+    height: 100%; 
+    position: fixed;
+    padding-top: 410px;   
+  }
+  
+  .brandImgLogin {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .menuLogin._active {
+    left: 0;
+    transition: 350ms;
+  }
+  
+  .menuLogin-item {
+    width: 90%;
+    text-align: center;
+  }
+  
