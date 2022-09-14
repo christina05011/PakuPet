@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useAuth }from '../../../context/authContext'
+import { useNavigate } from 'react-router-dom';
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -7,6 +9,9 @@ const useForm = (callback, validate) => {
     password: '',
     password2: ''
   });
+
+  const { signup } = useAuth();
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -20,7 +25,6 @@ const useForm = (callback, validate) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     setErrors(validate(values));
     setIsSubmitting(true);
   };
@@ -28,6 +32,8 @@ const useForm = (callback, validate) => {
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
+        signup(values.email, values.password);
+        navigate('/form-success')
         callback();
       }
     },
