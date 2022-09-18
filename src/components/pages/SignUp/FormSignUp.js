@@ -71,7 +71,7 @@ const FormSignup = ({ submitForm }) => {
           Crear cuenta
         </button>
         <span className='input-Login'>
-          ¿Ya tienes una cuenta? Ingresa <Link to='/Login' className="input-Login a" onClick={closeMobileMenu}>
+          ¿Ya tienes una cuenta? Ingresa <Link to='/sign-in' className="input-Login" onClick={closeMobileMenu}>
                                             aquí
                                           </Link>
           .

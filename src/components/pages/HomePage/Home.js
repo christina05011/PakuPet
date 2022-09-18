@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+// import { useAuth } from '../../../context/authContext';
 
 import { Link } from 'react-router-dom';
 
-
 function Home(){
-  const [click, setClick] = useState(false);
-  const closeMobileMenu = () => setClick(false);
+    // const {user} = useAuth();
+    // console.log(user);
+ 
+    const [click, setClick] = useState(false);
+    const closeMobileMenu = () => setClick(false);
 
-  return (
+    return (
     <>
     <header>
-            <div class="container">
-                <p class="logo">P'aku Pet</p>
+            <div className="container">
+                <p className="logo">P'aku Pet</p>
                 <nav>
                     <a href="#somos-paku">¿QUIÉNES SOMOS?</a>
                     <a href="#colaboradores">COLABORADOES</a>
@@ -35,11 +38,11 @@ function Home(){
         </section>
 
         <section id="somos-paku">
-            <div class="container">
-                <div class="img-container"></div>
-                <div class="texto">
+            <div className="container">
+                <div className="img-container"></div>
+                <div className="texto">
 
-                    <h2>Somos <span class="color-acento">P'aku Pet</span></h2>
+                    <h2>Somos <span className="color-acento">P'aku Pet</span></h2>
                     <p> 
 
                     Paku Pet es una web creada por tres amantes del mundo animal. El proyecto nació con el objetivo de ayudar a todas aquellas personas que conviven con animales
@@ -53,31 +56,31 @@ function Home(){
         </section>
 
         <section id="colaboradores">
-            <div class="container">
+            <div className="container">
                 <h2>Nuestros Colaboradores</h2>
-                <div class="programas">
+                <div className="programas">
                 </div>
             </div>
         </section>
 
         <section id="tinder">
-            <div class="container">
+            <div className="container">
                 <h2>TINDER PET</h2>
-                <div class="img-container"></div>            
+                <div className="img-container"></div>            
             </div>
         </section>
 
         <section id="adopta">
-            <div class="container">
+            <div className="container">
                 <h2>Adóptame</h2>
-                <div class="img-container"></div>  
+                <div className="img-container"></div>  
             </div>
         </section>
 
         <section id="tienda">
-            <div class="container">
+            <div className="container">
                 <h2>TIENDA ONLINE</h2>
-                <div class="img-container"></div>  
+                <div className="img-container"></div>  
             </div>
         </section>
 
@@ -102,7 +105,7 @@ function Home(){
         </section>
 
         <footer>
-            <div class="container">
+            <div className="container">
                 <p>&copy; P'aku Pet 2022</p>
             </div>
         </footer>
