@@ -10,7 +10,7 @@ const LoginSuccess = () => {
       <h1 className='success'>¡Has ingresado correctamente!</h1>
       <img className='imgSuccess' src='../../../images/check.png' alt='success-image' />
       
-      <Link to='/datos' onClick={closeMobileMenu}>
+      <Link to='/' onClick={closeMobileMenu}>
         <button className='form-Btn'>
           Continuar
         </button> 
