@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-// import { useAuth } from '../../../context/authContext';
+import { useAuth } from '../../../context/authContext';
 
 import { Link } from 'react-router-dom';
 
 function Home(){
-    // const {user} = useAuth();
-    // console.log(user);
+
+    const { user, logout, loading } = useAuth();
  
     const [click, setClick] = useState(false);
     const closeMobileMenu = () => setClick(false);
 
+    const handleLogout = async () => {
+        await logout();
+    }
+
+    if(loading) return <h1>Loading</h1>
+
     return (
     <>
-    <header>
+        <div>
+            Welcome {user.email}
+        </div>
+        <header>
             <div className="container">
                 <p className="logo">P'aku Pet</p>
                 <nav>
@@ -28,6 +37,9 @@ function Home(){
                         Sign Up
                       </button> 
                     </Link>
+                    <button onClick={handleLogout}>
+                        Logout
+                    </button>
                 </nav>
             </div>
         </header>
