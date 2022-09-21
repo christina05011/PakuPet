@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import { useAuth } from '../../../context/authContext';
 
@@ -91,8 +91,13 @@ function Home(){
 
         <section id="tienda">
             <div className="container">
-                <h2>TIENDA ONLINE</h2>
-                <div className="img-container"></div>  
+                <h2>Tienda Online</h2>
+                <div className="img-container"></div>
+                <Link to='/store' onClick={closeMobileMenu}>
+                    <button>
+                        Ingresar a la tienda
+                    </button> 
+                </Link>
             </div>
         </section>
 
