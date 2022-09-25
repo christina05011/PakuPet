@@ -7,7 +7,7 @@ export const Data = {
             price: 80,
             image: require('./images/producto01.jpg'),
             category: "Comida",
-            cantidad: 1,
+            amount: 1,
         },
         {
             id: 2,
@@ -15,7 +15,7 @@ export const Data = {
             price: 50,
             image: require('./images/producto02.jpg'),
             category: "Gatos",
-            cantidad: 1
+            amount: 1,
         },
         {
             id: 3,
@@ -23,7 +23,7 @@ export const Data = {
             price: 475,
             image: require('./images/producto03.jpg'),
             category: "Perros",
-            cantidad: 1
+            amount: 1,
         },
         {
             id: 4,
@@ -31,7 +31,7 @@ export const Data = {
             price: 1000,
             image: require('./images/producto04.jpg'),
             category: "Gatos",
-            cantidad: 1
+            amount: 1,
         },
         {
             id: 5,
@@ -39,7 +39,7 @@ export const Data = {
             price: 400,
             image: require('./images/producto05.jpg'),
             category: "Jaulas",
-            cantidad: 1
+            amount: 1,
         },
         {
             id: 6,
@@ -47,7 +47,7 @@ export const Data = {
             price: 200,
             image: require('./images/producto06.jpg'),
             category: "Perros",
-            cantidad: 1
+            amount: 1,
         },  
     ],
 };
