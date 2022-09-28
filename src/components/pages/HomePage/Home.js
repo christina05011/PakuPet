@@ -1,30 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
-import { useAuth } from '../../../context/authContext';
-
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../../context/authContext';
+import Modal from './Modal';
+import ModalMatch from '../Match/Modal';
 
 function Home(){
+  const { user, logout, loading } = useAuth();
+  const [click, setClick] = useState(false);
+  const closeMobileMenu = () => setClick(false);
+  const [openModal1, setOpenModal1] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+  const [openModal3, setOpenModal3] = useState(false);
+  const [openModal4, setOpenModal4] = useState(false);
+  const [openModal5, setOpenModal5] = useState(false);
+  const [openModal6, setOpenModal6] = useState(false);
+  const [openModal7, setOpenModal7] = useState(false);
+  const [openModal8, setOpenModal8] = useState(false);
+  const [openModal9, setOpenModal9] = useState(false);
+//Modales de los Matchs
+  const [match1, setMatch1] = useState(false);
+  const [match2, setMatch2] = useState(false);
+  const [match3, setMatch3] = useState(false);
+  const [match4, setMatch4] = useState(false);
+  const [match5, setMatch5] = useState(false);
+  const [match6, setMatch6] = useState(false);
+  const [match7, setMatch7] = useState(false);
+  const [match8, setMatch8] = useState(false);
+  const [match9, setMatch9] = useState(false);
 
-    const { user, logout, loading } = useAuth();
- 
-    const [click, setClick] = useState(false);
-    const closeMobileMenu = () => setClick(false);
-
-    const handleLogout = async () => {
-        await logout();
-    }
+  const handleLogout = async () => {
+    await logout();
+  }
 
     if(loading) return <h1>Loading</h1>
 
-    return (
+  return (
     <>
         <div>
             Welcome {user.email}
         </div>
         <header>
-            <div className="container">
-                <p className="logo">P'aku Pet</p>
+            <div class="container">
+                <p class="logo">P'aku Pet</p>
                 <nav>
                     <a href="#somos-paku">¿QUIÉNES SOMOS?</a>
                     <a href="#colaboradores">COLABORADOES</a>
@@ -41,20 +59,20 @@ function Home(){
                         Logout
                     </button>
                 </nav>
-            </div>
+            </div>         
         </header>
-
+        
         <section id="hero">
             <h1>¡Queremos ayudarte a ti y a tu mascota!</h1>
             <button>ÚNETE A LA COMUNIDAD P'AKU PET</button>
         </section>
 
         <section id="somos-paku">
-            <div className="container">
-                <div className="img-container"></div>
-                <div className="texto">
+            <div class="container">
+                <div class="img-container"></div>
+                <div class="texto">
 
-                    <h2>Somos <span className="color-acento">P'aku Pet</span></h2>
+                    <h2>Somos <span class="color-acento">P'aku Pet</span></h2>
                     <p> 
 
                     Paku Pet es una web creada por tres amantes del mundo animal. El proyecto nació con el objetivo de ayudar a todas aquellas personas que conviven con animales
@@ -68,30 +86,287 @@ function Home(){
         </section>
 
         <section id="colaboradores">
-            <div className="container">
+            <div class="container">
                 <h2>Nuestros Colaboradores</h2>
-                <div className="programas">
+                <div class="programas">
                 </div>
             </div>
         </section>
 
         <section id="tinder">
-            <div className="container">
-                <h2>TINDER PET</h2>
-                <div className="img-container"></div>            
+            <div class="container">
+                <h2>TINDER PET   
+                    <Link to='/match' onClick={closeMobileMenu}>
+                        <button>
+                            Matchs
+                        </button> 
+                    </Link>
+                </h2>
+                <div class="programas">
+                    <div class="carta">
+                        <h3>Rumba</h3>
+                        <p>Cachorro</p>
+                        <p>1,8 km</p>
+                        <button 
+                            onClick={() => setOpenModal1(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal1} 
+                        onClose={() => setOpenModal1(false)}
+                        imge={'cachorro.jpg'} 
+                        name={'RUMBA'} 
+                        cat={'un cachorro'} 
+                        edad={'4'} 
+                        km={'1,8'}/>
+                        <button 
+                            onClick={()=>setMatch1(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match1} 
+                        onClose={() => setMatch1(false)}
+                        imge={'cachorro.jpg'} 
+                        name={'RUMBA'} 
+                        cat={'Cachorro'}/>
+                    </div>  
+                    <div class="carta">
+                        <h3>Brutus</h3>
+                        <p>Adulto</p>
+                        <p>1,6 km</p>
+                        <button 
+                            onClick={() => setOpenModal2(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal2} 
+                        onClose={() => setOpenModal2(false)}
+                        imge={'adulto.jpg'} 
+                        name={'Brutus'} 
+                        cat={'un adulto'} 
+                        edad={'20'} 
+                        km={'1,6'}/>
+                        <button 
+                            onClick={()=>setMatch2(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match2} 
+                        onClose={() => setMatch2(false)}
+                        imge={'adulto.jpg'} 
+                        name={'BRUTUS'} 
+                        cat={'Adulto'}/>
+                    </div> 
+                    <div class="carta">
+                        <h3>Micky</h3>
+                        <p>Abuelito</p>
+                        <p>1,8 km</p>
+                        <button 
+                            onClick={() => setOpenModal3(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal3} 
+                        onClose={() => setOpenModal3(false)}
+                        imge={'abuelito.jpg'} 
+                        name={'Micky'} 
+                        cat={'un abuelito'} 
+                        edad={'60'} 
+                        km={'1,8'}/>
+                        <button 
+                            onClick={()=>setMatch3(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match3} 
+                        onClose={() => setMatch3(false)}
+                        imge={'abuelito.jpg'} 
+                        name={'MICKY'} 
+                        cat={'Abuelito'}/>
+                    </div>
+                </div> 
+                <div class="buttonG">MÁS PERROS P'AKU</div>
+                <div class="programas">
+                    <div class="gatos">
+                        <h3>Lupe</h3>
+                        <p>Abuelito</p>
+                        <p>3,6 km</p>
+                        <button 
+                            onClick={() => setOpenModal4(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal4} 
+                        onClose={() => setOpenModal4(false)}
+                        imge={'cat-814952_1920.jpg'} 
+                        name={'Lupe'} 
+                        cat={'un abuelito'} 
+                        edad={'60'} 
+                        km={'3,6'}/>
+                        <button 
+                            onClick={()=>setMatch4(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match4} 
+                        onClose={() => setMatch4(false)}
+                        imge={'cat-814952_1920.jpg'} 
+                        name={'LUPE'} 
+                        cat={'Abuelito'}/>
+                    </div> 
+                    <div class="gatos">
+                        <h3>Pelos</h3>
+                        <p>Cachorro</p>
+                        <p>1,0 km</p>
+                        <button 
+                            onClick={() => setOpenModal5(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal5} 
+                        onClose={() => setOpenModal5(false)}
+                        imge={'cat-2934720_1920.jpg'} 
+                        name={'Pelos'} 
+                        cat={'un cachorro'} 
+                        edad={'5'} 
+                        km={'1,0'}/>
+                        <button 
+                            onClick={()=>setMatch5(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match5} 
+                        onClose={() => setMatch5(false)}
+                        imge={'cat-2934720_1920.jpg'} 
+                        name={'PELOS'} 
+                        cat={'Cachorro'}/>
+                    </div> 
+                    <div class="gatos">
+                        <h3>Gatita</h3>
+                        <p>Adulto</p>
+                        <p>2,3 km</p>
+                        <button 
+                            onClick={() => setOpenModal6(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal6} 
+                        onClose={() => setOpenModal6(false)}
+                        imge={'cat-2068462_1920.jpg'} 
+                        name={'Gatita'} 
+                        cat={'una adulta'} 
+                        edad={'24'} 
+                        km={'2,3'}/>
+                        <button 
+                            onClick={()=>setMatch6(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match6} 
+                        onClose={() => setMatch6(false)}
+                        imge={'cat-2068462_1920.jpg'} 
+                        name={'GATITA'} 
+                        cat={'Adulta'}/>
+                    </div>          
+                </div>
+                <div class="buttonG">MÁS GATOS P'AKU</div>
+                <div class="programas">
+                    <div class="conejos">
+                        <h3>Gamorín</h3>
+                        <p>Abuelito</p>
+                        <p>3,6 km</p>
+                        <button 
+                            onClick={() => setOpenModal7(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal7} 
+                        onClose={() => setOpenModal7(false)}
+                        imge={'conejo1.jpg'} 
+                        name={'Gamorín'} 
+                        cat={'un abuelito'} 
+                        edad={'50'} 
+                        km={'3,6'}/>
+                        <button 
+                            onClick={()=>setMatch7(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match7} 
+                        onClose={() => setMatch7(false)}
+                        imge={'conejo1.jpg'} 
+                        name={'GAMORÍN'} 
+                        cat={'Abuelito'}/>
+                    </div> 
+                    <div class="conejos">
+                        <h3>Pulgas</h3>
+                        <p>Abuelita</p>
+                        <p>1,0 km</p>
+                        <button 
+                            onClick={() => setOpenModal8(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal8} 
+                        onClose={() => setOpenModal8(false)}
+                        imge={'conejo2.jpg'} 
+                        name={'Pulgas'} 
+                        cat={'una abuelita'} 
+                        edad={'70'} 
+                        km={'1,0'}/>
+                        <button 
+                            onClick={()=>setMatch8(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match8} 
+                        onClose={() => setMatch8(false)}
+                        imge={'conejo2.jpg'} 
+                        name={'PULGAS'} 
+                        cat={'Abuelita'}/>
+                    </div> 
+                    <div class="conejos">
+                        <h3>Pelusa</h3>
+                        <p>Adulto</p>
+                        <p>2,3 km</p>
+                        <button 
+                            onClick={() => setOpenModal9(true)}>
+                                Ver más
+                        </button>
+                        <Modal 
+                        open={openModal9} 
+                        onClose={() => setOpenModal9(false)}
+                        imge={'conejo3.jpg'} 
+                        name={'Pelusa'} 
+                        cat={'un adulto'} 
+                        edad={'15'} 
+                        km={'2,3'}/>
+                        <button 
+                            onClick={()=>setMatch9(true)}>
+                                Match
+                        </button>
+                        <ModalMatch 
+                        open={match9} 
+                        onClose={() => setMatch9(false)}
+                        imge={'conejo3.jpg'} 
+                        name={'PELUSA'} 
+                        cat={'Adulto'}/>
+                    </div>          
+                </div>
+                <div class="buttonG">MÁS CONEJOS P'AKU</div>
             </div>
         </section>
 
         <section id="adopta">
-            <div className="container">
+            <div class="container">
                 <h2>Adóptame</h2>
-                <div className="img-container"></div>  
+                <div class="img-container"></div>  
             </div>
         </section>
 
         <section id="tienda">
-            <div className="container">
-                <h2>Tienda Online</h2>
+            <div class="container">
+                <h2>TIENDA ONLINE</h2>
                 <div className="img-container"></div>
                 <Link to='/store' onClick={closeMobileMenu}>
                     <button>
@@ -122,7 +397,7 @@ function Home(){
         </section>
 
         <footer>
-            <div className="container">
+            <div class="container">
                 <p>&copy; P'aku Pet 2022</p>
             </div>
         </footer>
