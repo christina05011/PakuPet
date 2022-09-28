@@ -45,7 +45,6 @@ button:hover{
 
 header{
     background-color: rgb(245, 245, 245);
-    
 }
 
 header .logo{
@@ -373,7 +372,7 @@ footer .container{
         background-size: cover;
         background-position: center center;
         height: 700px;
-        width: 1400px; 
+        width: 1400px;
     }
 
     #tienda h2{

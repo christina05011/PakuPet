@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/HomePage/Home';
@@ -7,6 +7,7 @@ import Login from './components/pages/SignUp/Login';
 import { AuthProvider } from './context/authContext';
 import FormSuccess from './components/pages/SignUp/FormSuccess';
 import LoginSuccess from './components/pages/SignUp/LoginSuccess';
+import { OnlineStore } from './components/pages/OnlineStore/Store';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App(){
@@ -23,6 +24,7 @@ function App(){
             <Route path='/sign-in' element={<Login />} />
             <Route path='/form-success' element={<FormSuccess />} />
             <Route path='/login-success' element={<LoginSuccess />} />
+            <Route path='/store' element={<OnlineStore />} />
           </Routes>
         </Router>
       </AuthProvider>

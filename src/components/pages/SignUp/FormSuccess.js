@@ -8,7 +8,7 @@ const FormSuccess = () => {
   return (
     <div className='success-content'>
       <h1 className='success'>¡Te has registrado correctamente!</h1>
-      <img className='imgSuccess' src='../../../images/check.png' alt='success-image' />
+      {/* <img className='imgSuccess' src='../../../images/check.png' alt='success-image' /> */}
       
       <Link to='/' onClick={closeMobileMenu}>
         <button className='form-Btn'>
