@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../../context/DataProvider";
+import { DataContext } from "../../../context/StoreDataProvider";
 
 export const Header = () => {
     const value = useContext(DataContext);
@@ -19,8 +19,6 @@ export const Header = () => {
                     <span className="item_total">{cart.length}</span>
                 </div>
             </div>
-            
-            
         </header>
     )
 }

@@ -1,0 +1,101 @@
+.adopt{
+    background-color: white;
+}
+
+/* Header */
+header{
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+}
+
+header .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Pets */
+.pets_title{
+    font-size: 3rem;
+    padding: 8rem 0 0 5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.pets{
+    padding: 2rem 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem 2rem;
+    box-sizing: border-box;
+}
+
+.pet{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 10px 10px 2px rgba(0, 0, 0, .2);
+    border: 6px solid transparent;
+    border-radius: 5px;    
+}
+
+.pet:hover{
+    border: 6px solid #ffb51c;
+}
+.pet_img img{
+    width: 400px;
+    height: 290px;
+}
+.pet_footer{
+    padding: 1rem;
+}
+.pet_footer h1{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: black;
+    font-family: Helvetica, sans-serif;
+}
+.pet_footer p{
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.pet_footer .age{
+    font-size: 2rem;
+    color: black;
+    text-transform: lowercase;
+}
+.pet .button{
+   width: 100%;
+   height: 45%;
+   gap: 1rem 3rem;
+   padding: 0 6rem;
+   margin: 1rem;
+   
+}
+.pet .button .btn1{
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* .producto .button .btn2{
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+} */
+.button button{
+    background-color: #ffb51c;
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+}

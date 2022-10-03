@@ -4,16 +4,16 @@ import { Header } from "./Header";
 import { Cart } from './Cart';
 import './Store.css';
 import 'boxicons'
-import { DataProvider } from "../../../context/DataProvider";
+import { StoreDataProvider } from "../../../context/StoreDataProvider";
 
 export const OnlineStore = () => {
     return (
-        <DataProvider>
+        <StoreDataProvider>
             <div className="store">
                 <Header />
                 <Cart />
                 <Products />
             </div>
-        </DataProvider>
+        </StoreDataProvider>
     )
 }
