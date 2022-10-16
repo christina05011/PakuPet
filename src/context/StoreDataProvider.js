@@ -1,16 +1,16 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { Data } from '../Data.js';
+import { StoreData } from '../Data.js';
 
 export const DataContext = createContext();
 
-export const DataProvider = (props) => {
+export const StoreDataProvider = (props) => {
     const [products, setProducts] = useState([]);
     const [menu, setMenu] = useState(false);
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        const product = Data.items;
+        const product = StoreData.items;
         if(product){
             setProducts(product)
         }
@@ -56,7 +56,7 @@ export const DataProvider = (props) => {
     }, [cart])
 
     const value = {
-        products : [products],
+        products: [products],
         menu: [menu, setMenu],
         addCart: addCart,
         cart: [cart, setCart],

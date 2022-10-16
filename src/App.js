@@ -9,6 +9,7 @@ import FormSuccess from './components/pages/SignUp/FormSuccess';
 import LoginSuccess from './components/pages/SignUp/LoginSuccess';
 import { OnlineStore } from './components/pages/OnlineStore/Store';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { Adopt } from './components/pages/Adopt/Adopt'
 
 function App(){
     return (
@@ -25,6 +26,7 @@ function App(){
             <Route path='/form-success' element={<FormSuccess />} />
             <Route path='/login-success' element={<LoginSuccess />} />
             <Route path='/store' element={<OnlineStore />} />
+            <Route path='/adopt' element={<Adopt />} />
           </Routes>
         </Router>
       </AuthProvider>

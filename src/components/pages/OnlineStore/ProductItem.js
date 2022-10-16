@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DataContext } from '../../../context/DataProvider';
+import { DataContext } from '../../../context/StoreDataProvider';
 
 export const ProductItem = ({
     id,

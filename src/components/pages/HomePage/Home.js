@@ -41,8 +41,8 @@ function Home(){
             Welcome {user.email}
         </div>
         <header>
-            <div class="container">
-                <p class="logo">P'aku Pet</p>
+            <div className="container">
+                <p className="logo">P'aku Pet</p>
                 <nav>
                     <a href="#somos-paku">¿QUIÉNES SOMOS?</a>
                     <a href="#colaboradores">COLABORADOES</a>
@@ -68,11 +68,11 @@ function Home(){
         </section>
 
         <section id="somos-paku">
-            <div class="container">
-                <div class="img-container"></div>
-                <div class="texto">
+            <div className="container">
+                <div className="img-container"></div>
+                <div className="texto">
 
-                    <h2>Somos <span class="color-acento">P'aku Pet</span></h2>
+                    <h2>Somos <span className="color-acento">P'aku Pet</span></h2>
                     <p> 
 
                     Paku Pet es una web creada por tres amantes del mundo animal. El proyecto nació con el objetivo de ayudar a todas aquellas personas que conviven con animales
@@ -86,15 +86,15 @@ function Home(){
         </section>
 
         <section id="colaboradores">
-            <div class="container">
+            <div className="container">
                 <h2>Nuestros Colaboradores</h2>
-                <div class="programas">
+                <div className="programas">
                 </div>
             </div>
         </section>
 
         <section id="tinder">
-            <div class="container">
+            <div className="container">
                 <h2>TINDER PET   
                     <Link to='/match' onClick={closeMobileMenu}>
                         <button>
@@ -102,8 +102,8 @@ function Home(){
                         </button> 
                     </Link>
                 </h2>
-                <div class="programas">
-                    <div class="carta">
+                <div className="programas">
+                    <div className="carta">
                         <h3>Rumba</h3>
                         <p>Cachorro</p>
                         <p>1,8 km</p>
@@ -130,7 +130,7 @@ function Home(){
                         name={'RUMBA'} 
                         cat={'Cachorro'}/>
                     </div>  
-                    <div class="carta">
+                    <div className="carta">
                         <h3>Brutus</h3>
                         <p>Adulto</p>
                         <p>1,6 km</p>
@@ -157,7 +157,7 @@ function Home(){
                         name={'BRUTUS'} 
                         cat={'Adulto'}/>
                     </div> 
-                    <div class="carta">
+                    <div className="carta">
                         <h3>Micky</h3>
                         <p>Abuelito</p>
                         <p>1,8 km</p>
@@ -185,9 +185,9 @@ function Home(){
                         cat={'Abuelito'}/>
                     </div>
                 </div> 
-                <div class="buttonG">MÁS PERROS P'AKU</div>
-                <div class="programas">
-                    <div class="gatos">
+                <div className="buttonG">MÁS PERROS P'AKU</div>
+                <div className="programas">
+                    <div className="gatos">
                         <h3>Lupe</h3>
                         <p>Abuelito</p>
                         <p>3,6 km</p>
@@ -214,7 +214,7 @@ function Home(){
                         name={'LUPE'} 
                         cat={'Abuelito'}/>
                     </div> 
-                    <div class="gatos">
+                    <div className="gatos">
                         <h3>Pelos</h3>
                         <p>Cachorro</p>
                         <p>1,0 km</p>
@@ -241,7 +241,7 @@ function Home(){
                         name={'PELOS'} 
                         cat={'Cachorro'}/>
                     </div> 
-                    <div class="gatos">
+                    <div className="gatos">
                         <h3>Gatita</h3>
                         <p>Adulto</p>
                         <p>2,3 km</p>
@@ -269,9 +269,9 @@ function Home(){
                         cat={'Adulta'}/>
                     </div>          
                 </div>
-                <div class="buttonG">MÁS GATOS P'AKU</div>
-                <div class="programas">
-                    <div class="conejos">
+                <div className="buttonG">MÁS GATOS P'AKU</div>
+                <div className="programas">
+                    <div className="conejos">
                         <h3>Gamorín</h3>
                         <p>Abuelito</p>
                         <p>3,6 km</p>
@@ -298,7 +298,7 @@ function Home(){
                         name={'GAMORÍN'} 
                         cat={'Abuelito'}/>
                     </div> 
-                    <div class="conejos">
+                    <div className="conejos">
                         <h3>Pulgas</h3>
                         <p>Abuelita</p>
                         <p>1,0 km</p>
@@ -325,7 +325,7 @@ function Home(){
                         name={'PULGAS'} 
                         cat={'Abuelita'}/>
                     </div> 
-                    <div class="conejos">
+                    <div className="conejos">
                         <h3>Pelusa</h3>
                         <p>Adulto</p>
                         <p>2,3 km</p>
@@ -353,20 +353,25 @@ function Home(){
                         cat={'Adulto'}/>
                     </div>          
                 </div>
-                <div class="buttonG">MÁS CONEJOS P'AKU</div>
+                <div className="buttonG">MÁS CONEJOS P'AKU</div>
             </div>
         </section>
 
         <section id="adopta">
-            <div class="container">
+            <div className="container">
                 <h2>Adóptame</h2>
-                <div class="img-container"></div>  
+                <div className="img-container"></div>
+                <Link to='/adopt' onClick={closeMobileMenu}>
+                    <button>
+                        Adopta ahora
+                    </button> 
+                </Link>
             </div>
         </section>
 
         <section id="tienda">
-            <div class="container">
-                <h2>TIENDA ONLINE</h2>
+            <div className="container">
+                <h2>Tienda Online</h2>
                 <div className="img-container"></div>
                 <Link to='/store' onClick={closeMobileMenu}>
                     <button>
@@ -397,7 +402,7 @@ function Home(){
         </section>
 
         <footer>
-            <div class="container">
+            <div className="container">
                 <p>&copy; P'aku Pet 2022</p>
             </div>
         </footer>
