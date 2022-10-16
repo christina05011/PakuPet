@@ -5,6 +5,7 @@ export const DataContext = createContext();
 
 export const AdoptDataProvider = (props) => {
     const [pets, setPets] = useState([]);
+    const [menu, setMenu] = useState(false);
 
     useEffect(() => {
         const pet = AdoptData.items;
@@ -18,7 +19,8 @@ export const AdoptDataProvider = (props) => {
     }, [])
 
     const value = {
-        pets : [pets]
+        pets : [pets],
+        menu : [menu, setMenu]
     }
 
     return (

@@ -19,6 +19,7 @@ export const Pets = () => {
                             name={pet.name}
                             age={pet.age}
                             image={pet.image}
+                            contact={pet.contact}
                         />
                     ))
                 }

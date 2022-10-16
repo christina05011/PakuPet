@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../../../context/AdoptDataProvider';
 
 export const PetItem = ({
     name,
     age,
     image,
+    contact,
 }) => {
+    const value = useContext(DataContext);
+    const [menu, setMenu] = value.menu;
+
+    const tooglemenu = () => {
+        setMenu(!menu);
+    }
 
     return (
         <div className="pet">
@@ -16,8 +24,9 @@ export const PetItem = ({
             <div className="pet_footer">
                 <h1>{name}</h1>
                 <p className="age">{age} años</p>
+                <p className="contact">{contact}</p>
             </div>
-            <div className="button">
+            <div className="button" onClick={tooglemenu}>
                 <button className="btn1">
                     Adoptar
                 </button>
